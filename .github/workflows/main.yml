@@ -7,20 +7,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    # Set up python to be able to run python scripts
-   - name: Set up Python
-  uses: actions/setup-python@v4
-  with:
-    python-version: '3.7'
+      # Set up python to be able to run python scripts
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.7'
 
-    # Pip install the required packages
-    - name: Install Dependencies
-      run: pip install -r requirements.txt
+      # Pip install the required packages
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
 
-    # Run the test script
-    - name: Run test
-      run: |
-        cd code
-        bash test.sh
+      # Run the test script
+      - name: Run test
+        run: |
+          cd code
+          bash test.sh
